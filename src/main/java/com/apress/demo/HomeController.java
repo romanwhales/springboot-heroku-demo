@@ -18,6 +18,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model){
+        System.out.print(userrepository.findAll());
         List<User> users = userrepository.findAll();
         model.addAttribute("users",users);
         return "home";
